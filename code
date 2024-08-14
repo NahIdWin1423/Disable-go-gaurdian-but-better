@@ -1,0 +1,14 @@
+# Disable GoGuardian Extension on ChromeOS
+
+const disableGoGuardian = () => {
+    const extensionId = 'gkfojgjjgjjgjgkfjg'; // Replace with actual GoGuardian extension ID
+    chrome.management.setEnabled(extensionId, false, () => {
+        if (chrome.runtime.lastError) {
+            console.error(`Error disabling extension: ${chrome.runtime.lastError.message}`);
+        } else {
+            console.log('GoGuardian extension has been disabled.');
+        }
+    });
+};
+
+disableGoGuardian();
