@@ -1,0 +1,13 @@
+function enableGoGuardian() {
+    const extensionId = 'your-extension-id-here';
+    chrome.management.setEnabled(extensionId, true, function() {
+        if (chrome.runtime.lastError) {
+            console.error('Error enabling GoGuardian:', chrome.runtime.lastError);
+        } else {
+            console.log('GoGuardian extension enabled successfully.');
+        }
+    });
+}
+
+// Call the function to enable the extension
+enableGoGuardian();
